@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>PUSHSWAP - Visualizer</title>
+  <link rel="stylesheet" type="text/css" href="res/style.css">
+  <style id="sizecss"></style>
+</head>
+<body>
+  <div id="panel-left">
+    <div class="topbar">
+      <label for="args">stack a:</label>
+      <input type="text" id="args" />
+      <button id="load">load</button>
+    </div>
+    <div>
+      <p>Command line in bash (you can add the first line in your <span class=code>~/.zshrc</span> or <span class=code>~/.bashrc</span>):</p>
+      <pre>
+        zsh$ VISUALIZER() { ARGS="$@"; open "https://GlaceCoding.github.io/tools/pushswap/visualizer/?size=15&speed=150&args=$ARGS&queue="$(./push_swap $ARGS | tr '\n' ',') }
+        zsh$ VISUALIZER 71 108 97 99 101 67 111 100 105 110 103
+      </pre>
+    </div>
+  </div>
+  <div id="panel">
+    <div>
+      <button id="backward">&lt;|</button>
+      <button id="pause">||</button>
+      <button id="play">&gt;</button>
+      <button id="forward">|&gt;</button>
+    </div>
+    <div>
+      <b>done:</b>
+      <textarea id="done" rows=5></textarea>
+      <b>queue:</b>
+      <textarea id="queue" rows=5></textarea>
+    </div>
+    <div>
+      <label for="size">size:</label>
+      <input type="number" id="size" value="4" />
+    </div>
+    <div>
+      <input type="number" id="speed" value="200" />
+      <label for="speed">ms</label>
+    </div>
+  </div>
+  <div id="stack-b">
+<script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+    <ul class="stack"></ul>
+  </div>
+  <div id="stack-a">
+    <ul class="stack"></ul>
+  </div>
+  <footer>🧊 GlaceCoding tool. We accept <a href="https://github.com/GlaceCoding/GlaceCoding.github.io" target="_about">Pull Request</a> :)</footer>
+  <script type="text/javascript" src="res/visualizer.js"></script>
+</body>
+</html>
