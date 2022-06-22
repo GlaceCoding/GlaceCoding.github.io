@@ -47,7 +47,7 @@ function backward() {
     return
   if (!undo_action(action) && action[0] != ';')
     action = '; ' + action
-  $('#queue').val(trim($('#queue').val() + '\n' + action))
+  $('#queue').val(trim(action + '\n' + $('#queue').val()))
 }
 
 function forward() {
