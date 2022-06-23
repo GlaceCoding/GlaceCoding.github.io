@@ -17,7 +17,7 @@ function load() {
 
   const arr = $('input#args').val().replace(/\s+/g, ' ')
     .split(' ').map((num) => +num)
-  const sorted = [...arr].sort((a, b) => a > b)
+  const sorted = [...arr].sort((a, b) => a - b)
   const indexes = arr.map((el, index) => sorted.indexOf(el))
   const len = indexes.length - 1
   $(arr).each((k, val) => $('<li></li>').css({
