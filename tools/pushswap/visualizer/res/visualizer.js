@@ -110,6 +110,7 @@ function undo_action(action) {
     case 'rrr': return rr()
     case 'sa': return sa()
     case 'sb': return sb()
+    case 'ss': return ss()
   }
   return 0
 }
@@ -126,6 +127,7 @@ function do_action(action) {
     case 'rrr': return rrr()
     case 'sa': return sa()
     case 'sb': return sb()
+    case 'ss': return ss()
   }
   return 0
 }
@@ -188,6 +190,10 @@ function sb() {
   $('div#stack-b > ul > li:nth-child(2)')
     .prependTo('div#stack-b > ul')
   return 1
+}
+
+function ss() {
+  return sa() && sb()
 }
 
 function querystringParser(rawHash, opt) { // eslint-disable-line no-unused-vars
