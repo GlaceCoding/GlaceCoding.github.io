@@ -68,7 +68,7 @@ __loop = null;
 function loop() {
   if ($('body').hasClass('play'))
     forward()
-  const ms = Math.max(50, +$('input#speed').val() || 50);
+  const ms = Math.max(1, +$('input#speed').val() || 1);
   clearTimeout(__loop)
   __loop = setTimeout(loop, ms)
 }
